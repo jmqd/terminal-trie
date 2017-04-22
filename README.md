@@ -10,6 +10,9 @@ Goal is to do as much in CLI as possible.
 
 - right now, usage isn't very convenient. It's still in POC stages.
 - generally, I currently do this: alias tt="python3 /path/to/main.py"
+- .ttrc.json as dotfile in `~/`
+
+#### Note: all of your shortcuts are 100% configurable in your ~/.ttrc.json file.
 
 ### Phase 1 is URL shortcuts.
 

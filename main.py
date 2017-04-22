@@ -1,14 +1,16 @@
 import sys
 import core
+import os
+import util
+
+CONFIG_PATH = os.path.expanduser('~/.ttrc.json')
 
 def main():
-    path = sys.argv[1:]
-    context = core.Context(path)
-    config = core.load_config('./config.json')
-    trie = core.make_trie(config)
-    node = trie.get_node(path)
+    context = core.Context(sys.argv[1:])
+    trie_config = util.load_jsonfile(CONFIG_PATH)
+    trie = core.make_trie(trie_config)
+    node = core.get_node(context, trie)
     action = node.value
-
     core.perform_action(action, context)
 
 if __name__ == '__main__':
