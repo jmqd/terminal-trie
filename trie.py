@@ -10,6 +10,7 @@ class Trie(object):
             if key not in node.successors:
                 return None
             node = node.traverse_to(key)
+            #TODO: create a LeafNode type instead of this hack
             if node.value.value.get('is_forced_leaf'): return node
         return node
 
