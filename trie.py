@@ -1,10 +1,12 @@
 class Trie(object):
     '''The main Trie object.'''
     def __init__(self):
-        '''Takes the text given and creates a Trie.'''
+        '''Initializes an empty Trie with a root Node.'''
+        #TODO: Make a RootNode type.
         self.root = Node(None, None, None)
 
     def get_node(self, keypath):
+        '''Special note: has concept of "forced leaf" node.'''
         node = self.root
         for key in keypath:
             if key not in node.successors:
@@ -25,9 +27,9 @@ class Trie(object):
         node.value = value
 
 class Node(object):
-    '''The nodes, which are characters in the english alphabet, [A-Za-z].'''
+    '''The nodes, which are user-defined words.'''
     def __init__(self, predecessor, key, value):
-        '''Initialize node. Need its predecessor and the char it represents.'''
+        '''Initialize node. Need its predecessor, the word it represents, and its value.'''
         self.key = key
         self.value = value
         self.predecessor = predecessor
