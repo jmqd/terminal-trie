@@ -1,0 +1,44 @@
+{
+    "shortcuts": {
+        "hn": {
+            "description": "Go to hackernews.",
+            "action": "open_url",
+            "value": "https://news.ycombinator.com/"
+        },
+        "/.": {
+            "description": "Go to slashdot.",
+            "action": "open_url",
+            "value": "https://slashdot.org/"
+        },
+        "g": {
+            "description": "Google search.",
+            "action": "open_template_url",
+            "value": "https://google.com/#q={VALUE}",
+            "is_forced_leaf": true
+        },
+        "imgs": {
+            "description": "Google image search.",
+            "action": "open_template_url",
+            "value": "https://www.google.com/search?tbm=isch&q={VALUE}",
+            "is_forced_leaf": true
+        },
+        "clfs": {
+            "description": "Craigslist for-sale search.",
+            "action": "open_template_url",
+            "value": "https://seattle.craigslist.org/search/sss?query={VALUE}&sort=rel",
+            "is_forced_leaf": true
+        },
+        "github repo": {
+            "description": "Go to github repo.",
+            "action": "open_template_url",
+            "value": "https://github.com/{VALUE}",
+            "is_forced_leaf": true
+        },
+        "github user": {
+            "description": "Go to github repo.",
+            "action": "open_template_url",
+            "value": "https://github.com/{VALUE}",
+            "is_forced_leaf": true
+        }
+    }
+}
