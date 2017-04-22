@@ -9,7 +9,7 @@ Goal is to do as much in CLI as possible.
 ## usage
 
 - right now, usage isn't very convenient. It's still in POC stages.
-- generally, I currently do this: alias tt="/path/to/main.py"
+- generally, I currently do this: alias tt="python3 /path/to/main.py"
 
 ### Phase 1 is URL shortcuts.
 
