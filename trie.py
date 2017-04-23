@@ -13,7 +13,7 @@ class Trie(object):
                 return None
             node = node.traverse_to(key)
             #TODO: create a LeafNode type instead of this hack
-            if node.value.value.get('is_forced_leaf'): return node
+            if node.value.config.get('is_forced_leaf'): return node
         return node
 
     def add(self, full_key, value):

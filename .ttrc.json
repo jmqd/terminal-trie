@@ -35,10 +35,17 @@
             "is_forced_leaf": true
         },
         "github user": {
-            "description": "Go to github repo.",
+            "description": "Go to github username.",
             "action": "open_template_url",
             "value": "https://github.com/{VALUE}",
             "is_forced_leaf": true
+        },
+        "email": {
+            "description": "Begin drafting an email.",
+            "action": "open_template_url",
+            "value": "mailto:{RECIPIENT}",
+            "is_forced_leaf": true
         }
+
     }
 }

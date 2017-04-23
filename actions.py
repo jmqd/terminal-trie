@@ -1,10 +1,11 @@
 import abc
 import util
 import subprocess
+import logging
 
 class Action(metaclass = abc.ABCMeta):
     def __init__(self, key, config):
-        self.value = config
+        self.config = config
         self.key = key
         self.pathlength = len(self.key.split(' '))
 
@@ -30,9 +31,15 @@ class OpenUrlAction(Action):
             'Windows': 'explorer'
             }
 
+    def __init__(self, key, config):
+        super().__init__(key, config)
+        self.address = self.config['value']
+
     def act(self, context):
         try:
-            subprocess.call([self.SYSTEM_OPEN_URL[context.system], self.value['value']])
+            command = [self.SYSTEM_OPEN_URL[context.system], self.address]
+            logging.info("Attempting to make call: %s", command)
+            subprocess.call(command)
         except Exception as e:
             print("Problem opening that URL. Sorry.")
             raise
@@ -41,9 +48,12 @@ class OpenTemplateUrl(OpenUrlAction):
     CONFIG_NAME = 'open_template_url'
 
     def act(self, context):
-        template = self.value['value']
-        injection = ' '.join(context.args[self.pathlength:])
-        value = template.format(VALUE = injection)
-        self.value['value'] = value
+        template = self.config['value']
+        try:
+            format_dict = {parameter:context.args[self.pathlength + i] for i, parameter in enumerate(self.config['ordered_parameters'])}
+        except KeyError:
+            format_dict = {'VALUE': '+'.join(context.args[self.pathlength:])}
+        formatted_address = template.format(**format_dict)
+        self.address = formatted_address
         super().act(context)
 

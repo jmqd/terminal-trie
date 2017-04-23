@@ -2,8 +2,10 @@ import sys
 import core
 import os
 import util
+import logging
 
 CONFIG_PATH = os.path.expanduser('~/.ttrc.json')
+logging.basicConfig(level = logging.INFO)
 
 def main():
     context = core.Context(sys.argv[1:])
