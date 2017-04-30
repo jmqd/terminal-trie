@@ -56,4 +56,3 @@ class OpenTemplateUrl(OpenUrlAction):
         formatted_address = template.format(**format_dict)
         self.address = formatted_address
         super().act(context)
-

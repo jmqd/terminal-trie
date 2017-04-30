@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 import sys
 import core
 import os
 import util
 import logging
 
-CONFIG_PATH = os.path.expanduser('~/.ttrc.json')
+CONFIG_PATH = os.path.expanduser('~/.tt/config.json')
 logging.basicConfig(level = logging.INFO)
 
 def main():
