@@ -28,13 +28,7 @@
             "value": "https://seattle.craigslist.org/search/sss?query={VALUE}&sort=rel",
             "is_forced_leaf": true
         },
-        "github repo": {
-            "description": "Go to github repo.",
-            "action": "open_template_url",
-            "value": "https://github.com/{VALUE}",
-            "is_forced_leaf": true
-        },
-        "github user": {
+        "github": {
             "description": "Go to github username.",
             "action": "open_template_url",
             "value": "https://github.com/{VALUE}",
