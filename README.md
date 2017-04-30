@@ -1,18 +1,23 @@
 # terminal-trie
 
-## for people annoyed by guis
+### for people annoyed by guis
 
-A trie-based shortcut system for doing things that normally require leaving the terminal.
+A shortcut system for doing things quickly via CLI.
 
-Goal is to do as much in CLI as possible.
+__Goal is to do as much in CLI as possible, with short user-defined shortcuts.__
 
-## usage
+## Usage
 
-- right now, usage isn't very convenient. It's still in POC stages.
-- generally, I currently do this: alias tt="python3 /path/to/main.py"
-- .ttrc.json as dotfile in `~/`
+Right now, usage isn't very convenient. It's still in POC stages.
 
-#### Note: all of your shortcuts are 100% configurable in your ~/.ttrc.json file.
+However, here's the general guidance:
+
+- Right now, installation is only tested on Mac OS, and assumes UNIX-like system.
+- `install.sh` script will make ~/.tt dir and install the runtime there
+- Recommend adding this to your `~/.bashrc` or `~/.zshrc`: `alias tt=~/.tt/main.py`
+- Use with alfred via defining workflows that invoke tt.
+- Use with keepassx (support is coming to quickly retrieve and paste passwords)
+- All shortcuts are configurable and extensible by adding to the `config.json` file.
 
 ### Phase 1 is URL shortcuts.
 
