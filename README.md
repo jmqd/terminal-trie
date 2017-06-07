@@ -1,5 +1,7 @@
 # terminal-trie
 
+## status: on pause
+
 ### for people annoyed by guis
 
 A shortcut system for doing things quickly via CLI.
