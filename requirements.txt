@@ -1,0 +1,5 @@
+six==1.10.0
+pycrypto==2.6.1
+keepassx==0.1.0
+prettytable==7
+PyYAML==3.12
